@@ -51,8 +51,7 @@
 			//Оформить расчет дневного бюджета  и вывод на экран этого значения как одну функцию (detectDayBudget)
 			function detectDayBudget() {
 				appData.moneyPerDay = (appData.budget / 30).toFixed();
-			
-				alert("Ежедневный бюджет: " + appData.moneyPerDay);
+				alert("Ежедневный бюджет: " + appData.moneyPerDay + "руб.");
 			}
 			detectDayBudget();
 			
@@ -69,24 +68,7 @@
 				}
 			}
 			detectLevel();
-			
-			//Создать функцию для определения необязательных расходов (chooseOptExpenses):
-			
-			let optExpenses = {},
-				a;
-			
-			function chooseOptExpenses() {
-						a = prompt ("Статья необязательных расходов?", '');
-			}
-			
-			for (let i=0; i<3; i++) {
-				chooseOptExpenses();
-				optExpenses.one = a;
-			};
-			
-			console.log (optExpenses);
-			
-			
+					
 			function checkSavings() {
 				if (appData.savings == true) {
 					let save = +prompt("Какова сумма накоплений?"),
@@ -98,6 +80,18 @@
 			}
 			checkSavings();
 			
+			//Создать функцию для определения необязательных расходов (chooseOptExpenses):
+			
+			function chooseOptExpenses() {
+				for (let i=1; i<=3; i++) {
+						let questionOptExpenses [i] = prompt ("Статья необязательных расходов?", '');
+					appData.optionalExpenses[i] = questionOptExpenses;
+					console.log (appData.optionalExpenses);
+				}
+			};
+			
+			chooseOptExpenses();
+					
 			
 			
                 </script>
