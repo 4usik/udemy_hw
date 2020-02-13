@@ -66,13 +66,13 @@
 					alert("Доход в месяц с Вашего депозита: " + appData.monthIncome);
 				}
 			},
-		/*	chooseOptExpenses: function () {
+			chooseOptExpenses: function () {
 				for (let i = 1; i <= 3; i++) {
-					let questionOptExpenses[i] = prompt("Статья необязательных расходов?", '');
+					let questionOptExpenses = prompt("Статья необязательных расходов?", '');
 					appData.optionalExpenses[i] = questionOptExpenses;
 					console.log(appData.optionalExpenses);
 				}
-			}, */
+			}, 
 			chooseIncome: function () {
 				let items = prompt('Что принесет дополнительный доход? (перечислите через запятую)', '');
 				while ((typeof (items)) != 'string' || items == "" || items == null) {
