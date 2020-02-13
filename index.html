@@ -66,18 +66,25 @@
 					alert("Доход в месяц с Вашего депозита: " + appData.monthIncome);
 				}
 			},
-			chooseOptExpenses: function () {
+		/*	chooseOptExpenses: function () {
 				for (let i = 1; i <= 3; i++) {
 					let questionOptExpenses[i] = prompt("Статья необязательных расходов?", '');
 					appData.optionalExpenses[i] = questionOptExpenses;
 					console.log(appData.optionalExpenses);
 				}
-			},
+			}, */
 			chooseIncome: function () {
 				let items = prompt('Что принесет дополнительный доход? (перечислите через запятую)', '');
+				while ((typeof (items)) != 'string' || items == "" || items == null) {
+					items = prompt('Что принесет дополнительный доход? (перечислите через запятую)', '');
+				}
 				appData.income = items.split(', ');
+				appData.income.push(prompt('Может что-то еще?', ''));
+				appData.income.sort;
+				
 			}
 		};
+		
 	</script>
 </body>
 
